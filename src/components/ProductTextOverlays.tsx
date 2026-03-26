@@ -9,9 +9,9 @@ interface Props {
 export const ProductTextOverlays: React.FC<Props> = ({ scrollProgress }) => {
   const sectionsRef = useRef<(HTMLDivElement | null)[]>([]);
 
-  // Section 1 -> 10%, Section 2 -> 30%, Section 3 -> 55%, Section 4 -> 75%
-  const triggerPoints = [0.1, 0.3, 0.55, 0.75];
-  const fadeRange = 0.08; // +/- 8% of progress to fade in/out
+  // Section 1 -> 0% (Initial Load), Section 2 -> 30%, Section 3 -> 55%, Section 4 -> 80%
+  const triggerPoints = [0.0, 0.3, 0.55, 0.8];
+  const fadeRange = 0.12; // increased fade range for smoother transitions
 
   useEffect(() => {
     sectionsRef.current.forEach((section, idx) => {
